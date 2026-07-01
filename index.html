@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Explorer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#0d6efd;
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+}
+
+.logo{
+    color:#fff;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.menu{
+    display:none;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+}
+
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.overlay{
+    background:rgba(0,0,0,.55);
+    color:white;
+    padding:40px;
+    border-radius:12px;
+}
+
+.overlay h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.overlay p{
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius:5px;
+    background:#ff9800;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e67e00;
+}
+
+section{
+    padding:80px 8%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:15px;
+}
+
+.card p{
+    padding:0 15px 20px;
+}
+
+.about{
+    text-align:center;
+    line-height:1.8;
+}
+
+.contact form{
+    max-width:500px;
+    margin:auto;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.contact button{
+    width:100%;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+.menu{
+    display:block;
+}
+
+nav ul{
+    display:none;
+    flex-direction:column;
+    background:#0d6efd;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+}
+
+nav ul.show{
+    display:flex;
+}
+
+nav ul li{
+    margin:15px 0;
+    text-align:center;
+}
+
+.overlay h1{
+    font-size:40px;
+}
+
+.overlay p{
+    font-size:18px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<nav>
+
+<div class="logo">Travel Explorer</div>
+
+<ul id="menuList">
+<li><a href="#home">Home</a></li>
+<li><a href="#destinations">Destinations</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="overlay">
+<h1>Explore The World</h1>
+<p>Discover Amazing Places With Us</p>
+<button onclick="bookTrip()">Book Your Trip</button>
+</div>
+</section>
+
+<section id="destinations">
+
+<h2>Popular Destinations</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80">
+<h3>Maldives</h3>
+<p>Enjoy crystal-clear beaches and luxurious resorts.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80">
+<h3>Switzerland</h3>
+<p>Experience breathtaking mountains and lakes.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=600&q=80">
+<h3>Paris</h3>
+<p>Visit the romantic city full of history and culture.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<h2>About Us</h2>
+
+<p>
+Travel Explorer helps you discover the world's most beautiful destinations.
+We provide affordable travel packages, comfortable stays, and unforgettable
+experiences for families, couples, and solo travelers.
+</p>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<form id="contactForm">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea rows="5" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+<footer>
+<p>© 2026 Travel Explorer | All Rights Reserved</p>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menuList").classList.toggle("show");
+}
+
+function bookTrip(){
+    alert("🎉 Thank you for choosing Travel Explorer!\nYour adventure starts soon.");
+}
+
+document.getElementById("contactForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    alert("✅ Thank you! Your message has been sent.");
+    this.reset();
+});
+</script>
+
+</body>
+</html>
