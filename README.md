@@ -15,7 +15,8 @@ A responsive travel website built using **HTML, CSS, and JavaScript**.
 - JavaScript (Vanilla)
 
 ## 📸 Preview
-(Add screenshot here)
+<img width="1903" height="958" alt="image" src="https://github.com/user-attachments/assets/f24c8caa-a4c6-4942-b294-297e5a05df56" />
+
 
 ## 🚀 Live Demo
 (Optional: add GitHub Pages link)
