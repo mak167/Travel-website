@@ -19,7 +19,7 @@ A responsive travel website built using **HTML, CSS, and JavaScript**.
 
 
 ## 🚀 Live Demo
-https://mak167.github.io/Travel-website/
+https://mak167.github.io/Travel-website
 
 ## 👨‍💻 Author
 - Makrand Joshi (mak167)
